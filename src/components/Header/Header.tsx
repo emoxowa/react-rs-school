@@ -17,7 +17,7 @@ function Header(): JSX.Element {
             <Link to="about">About</Link>
           </li>
           <li className={styles['navigation__item']}>
-            <Link to="contacts">Contacts</Link>
+            <Link to="contacts">NotFound</Link>
           </li>
         </ul>
       </nav>

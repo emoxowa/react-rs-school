@@ -4,15 +4,15 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import NotFound from './pages/NotFound/NotFound';
 import Header from './components/Header/Header';
+import AboutProject from './components/AboutProject/AboutProject';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Explore a World of Healthy Recipes for a Nourishing and Delicious Experience!</h1>
+      <AboutProject />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

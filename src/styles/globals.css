@@ -1,15 +1,22 @@
+* {
+	transition: all 0.2s linear;
+}
 
 body {
 	margin: 0;
 	color: var(--color-primary-txt);
 	background-color: var(--color-primary-bg);
 	font-family: var(--font-family);
+	background-image: url('../assets/background.png');
+	background-image: url(/src/assets/background.png);
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 :root {
 	--color-primary: #34C759;
 	--color-primary-txt: #FFFFFF;
-	--color-primary-bg: #121212;
+	--color-primary-bg: #080808;
 	--color-secondary-txt: #85878C;
 	--font-family: 'Noto Sans', sans-serif;
 	box-sizing: border-box;
@@ -21,6 +28,5 @@ body {
 
 a {
 	text-decoration: none;
-	
 	color: inherit;
 }
