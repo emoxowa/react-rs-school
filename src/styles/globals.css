@@ -1,0 +1,26 @@
+
+body {
+	margin: 0;
+	color: var(--color-primary-txt);
+	background-color: var(--color-primary-bg);
+	font-family: var(--font-family);
+}
+
+:root {
+	--color-primary: #34C759;
+	--color-primary-txt: #FFFFFF;
+	--color-primary-bg: #121212;
+	--color-secondary-txt: #85878C;
+	--font-family: 'Noto Sans', sans-serif;
+	box-sizing: border-box;
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+}
+
+a {
+	text-decoration: none;
+	
+	color: inherit;
+}

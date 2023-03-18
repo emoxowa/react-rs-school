@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1110px;
+  padding: 20px 0;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+} 
+
+.navigation {
+  margin: 0;
+}
+
+.navigation__list {
+  display: flex;
+  list-style: none;
+  gap: 38px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__item {
+  font-size: 0.86rem;
+}
+
+.navigation__item:hover {
+  color: var(--color-primary);
+}
