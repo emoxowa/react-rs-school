@@ -6,16 +6,34 @@ import NotFound from './pages/NotFound/NotFound';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="app">
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Home />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="about"
+          element={
+            <>
+              <Header />
+              <About />
+              <Footer />
+            </>
+          }
+        />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

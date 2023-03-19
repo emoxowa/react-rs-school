@@ -2,7 +2,7 @@ import styles from './About.module.css';
 import img1 from '../../assets/food1.png';
 import img2 from '../../assets/food2.png';
 
-function About() {
+function About(): JSX.Element {
   return (
     <main className={styles['main']}>
       <div className={styles['about__content']}>

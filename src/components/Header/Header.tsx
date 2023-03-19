@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 import logo from '../../assets/logo.png';
 
 class Header extends Component {
-  render() {
+  render(): JSX.Element {
     return (
       <header className={styles.header}>
         <Link to="/">

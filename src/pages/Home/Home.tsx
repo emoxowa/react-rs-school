@@ -2,7 +2,7 @@ import AboutProject from '../../components/AboutProject/AboutProject';
 import Card from '../../components/Card/Card';
 import styles from './Home.module.css';
 
-function Home() {
+function Home(): JSX.Element {
   return (
     <main className={styles.main}>
       <AboutProject />
