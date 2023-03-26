@@ -19,6 +19,9 @@ class Header extends Component {
               <Link to="about">About</Link>
             </li>
             <li className={styles['navigation__item']}>
+              <Link to="forms">Forms</Link>
+            </li>
+            <li className={styles['navigation__item']}>
               <Link to="contacts">NotFound</Link>
             </li>
           </ul>

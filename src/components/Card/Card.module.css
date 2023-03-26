@@ -44,7 +44,7 @@
 .card__footer {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   gap: 14px;
 }
 
@@ -54,4 +54,16 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.card__rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.card__date {
+  min-width: 100px;
+  height: 20px;
 }
