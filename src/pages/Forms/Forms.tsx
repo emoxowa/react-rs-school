@@ -26,6 +26,10 @@ function Forms() {
               title={card.recipeTitle}
               date={card.date}
               description={card.description}
+              category={card.category}
+              image={card.image}
+              checkbox={card.checkbox}
+              radio={card.radio}
             />
           ))}
         </ul>

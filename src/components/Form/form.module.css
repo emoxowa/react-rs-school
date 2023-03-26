@@ -2,13 +2,13 @@
   box-sizing: content-box;
   max-width: 400px;
   margin: 40px auto 100px;
-  padding: 50px 70px;
+  padding: 50px 50px;
   background-color: var(--color-secondary-bg);
 }
 
 .form__input-group {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 130px 1fr;
   margin-bottom: 10px;
   padding: 10px;
 }

@@ -3,6 +3,10 @@ export interface CardInfo {
   recipeTitle?: string;
   date?: string;
   description?: string;
+  category?: string;
+  image?: File | null;
+  checkbox?: boolean;
+  radio?: string;
 }
 
 export interface FormState {
@@ -10,15 +14,17 @@ export interface FormState {
 }
 
 export interface CardProps {
-  src?: string;
+  image?: File | null;
   title?: string;
   userName?: string;
   description?: string;
   rating?: number;
   date?: string;
+  category?: string;
+  checkbox?: boolean;
+  radio?: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface FormProps {
   setCardsInfo: (cardInfo: CardInfo) => void;
 }
