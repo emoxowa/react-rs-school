@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import Form from '../../components/Form/form';
 import styles from './Forms.module.css';
-import { CardInfo } from '../../types';
-import Card from '../../components/Card/Card';
+import { IFormCard } from '../../types';
+import FormCard from '../../components/FormCard/FormCard';
 
 function Forms() {
-  const [cards, setCards] = useState<CardInfo[]>([]);
+  const [cards, setCards] = useState<IFormCard[]>([]);
 
-  const addCard = (cardInfo: CardInfo): void => {
+  const addCard = (cardInfo: IFormCard): void => {
     setCards((prevCards) => [...prevCards, cardInfo]);
   };
 
@@ -20,10 +20,10 @@ function Forms() {
         <Form setCardsInfo={addCard} />
         <ul className={styles.cards}>
           {cards.map((card, index) => (
-            <Card
+            <FormCard
               key={index}
               userName={card.userName}
-              title={card.recipeTitle}
+              recipeTitle={card.recipeTitle}
               date={card.date}
               description={card.description}
               category={card.category}

@@ -1,4 +1,4 @@
-export interface CardInfo {
+export interface IFormCard {
   userName?: string;
   recipeTitle?: string;
   date?: string;
@@ -13,8 +13,9 @@ export interface FormState {
   submitMessage: string;
 }
 
-export interface CardProps {
-  image?: File | null;
+export interface ICard {
+  id?: string;
+  image?: string;
   title?: string;
   userName?: string;
   description?: string;
@@ -26,5 +27,5 @@ export interface CardProps {
 }
 
 export interface FormProps {
-  setCardsInfo: (cardInfo: CardInfo) => void;
+  setCardsInfo: (cardInfo: IFormCard) => void;
 }

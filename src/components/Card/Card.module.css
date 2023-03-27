@@ -18,9 +18,13 @@
 .card__title {
   text-align: start;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 20px;
   line-height: 30px;
-  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 24px;
+  max-width: 300px;
+  white-space: nowrap;
 }
 
 .card__subtitle {
@@ -38,6 +42,10 @@
   line-height: 18px;
   color: var(--color-secondary-txt);
   text-align: start;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 300px;
+  height: 55px;
 }
 
 .card__footer {
@@ -71,6 +79,7 @@
   display: flex;
   gap: 5px;
   align-items: center;
+  height: 30px;
 }
 
 .card__category {

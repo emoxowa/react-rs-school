@@ -170,7 +170,6 @@ class Form extends Component<FormProps, FormState, CardInfo> {
           <div>
             <label htmlFor="radio-yes" className={styles.form__label}>
               <input
-                checked
                 value="Yes"
                 id="radio-yes"
                 type="radio"
