@@ -16,13 +16,13 @@ class Header extends Component {
               <Link to="/">Home</Link>
             </li>
             <li className={styles['navigation__item']}>
-              <Link to="about">About</Link>
+              <Link to="/about">About</Link>
             </li>
             <li className={styles['navigation__item']}>
-              <Link to="forms">Forms</Link>
+              <Link to="/forms">Forms</Link>
             </li>
             <li className={styles['navigation__item']}>
-              <Link to="contacts">NotFound</Link>
+              <Link to="/contacts">NotFound</Link>
             </li>
           </ul>
         </nav>
