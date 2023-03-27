@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styles from './form.module.css';
-import { CardInfo, FormProps, FormState } from '../../types';
+import { IFormCard, FormProps, FormState } from '../../types';
 
-class Form extends Component<FormProps, FormState, CardInfo> {
+class Form extends Component<FormProps, FormState, IFormCard> {
   inputsRefs: {
     nameInput: React.RefObject<HTMLInputElement>;
     recipeTitleInput: React.RefObject<HTMLInputElement>;
