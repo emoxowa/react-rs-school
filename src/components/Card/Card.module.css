@@ -1,6 +1,5 @@
 .card {
   width: 350px;
-  height: 493px;
   background-color: var(--color-secondary-bg);
   border: 5px;
   cursor: pointer;
@@ -9,7 +8,7 @@
 .card__image {
   width: 350px;
   height: 260px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .card__content {
@@ -19,9 +18,13 @@
 .card__title {
   text-align: start;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 20px;
   line-height: 30px;
-  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 24px;
+  max-width: 300px;
+  white-space: nowrap;
 }
 
 .card__subtitle {
@@ -39,12 +42,16 @@
   line-height: 18px;
   color: var(--color-secondary-txt);
   text-align: start;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 300px;
+  height: 55px;
 }
 
 .card__footer {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   gap: 14px;
 }
 
@@ -54,4 +61,47 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.card__rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.card__date {
+  min-width: 100px;
+  height: 20px;
+}
+
+.card__category-list {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  height: 30px;
+}
+
+.card__category {
+  padding: 5px;
+  background-color: var(--color-primary);
+  text-align: start;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-left: 0;
+  margin-bottom: 5px;
+  text-align: start;
+}
+
+.card__gluten {
+  text-align: start;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-left: 0;
+  margin-bottom: 10px;
+  text-align: start;
+  width: 30px;
+  height: 30px;
 }

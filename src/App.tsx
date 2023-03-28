@@ -5,6 +5,7 @@ import About from './pages/About/About';
 import NotFound from './pages/NotFound/NotFound';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Forms from './pages/Forms/Forms';
 
 function App(): JSX.Element {
   return (
@@ -28,6 +29,16 @@ function App(): JSX.Element {
               <>
                 <Header />
                 <About />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="forms"
+            element={
+              <>
+                <Header />
+                <Forms />
                 <Footer />
               </>
             }
