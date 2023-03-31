@@ -1,34 +1,16 @@
 import Card from '../Card/Card';
 import './CardList.css';
-import { useEffect, useState } from 'react';
-import { DISPLAY } from '../../constants/constants';
 import Preloader from '../Preloader/Preloader';
-import { ICard } from '../../types';
+import { ICardList } from '../../types';
 import SearchError from '../SearchError/SearchError';
 
-export interface ICardList {
-  isLoading: boolean;
-  isNotFound: boolean;
-  cards: ICard[];
-}
-
-function CardList({ cards, isLoading, isNotFound }: ICardList): JSX.Element {
-  const [displayedCards, setDdisplayedCards]: [number, (newValue: number) => void] = useState(0);
-
-  function displayCountCards() {
-    if (DISPLAY > 1135) {
-      setDdisplayedCards(12);
-    } else if (DISPLAY <= 1135) {
-      setDdisplayedCards(3);
-    } else if (DISPLAY <= 480) {
-      setDdisplayedCards(2);
-    }
-  }
-
-  useEffect(() => {
-    displayCountCards();
-  }, []);
-
+function CardList({
+  cards,
+  isLoading,
+  isNotFound,
+  displayMore,
+  displayedCards,
+}: ICardList): JSX.Element {
   return (
     <section>
       {isLoading && <Preloader />}
@@ -50,6 +32,13 @@ function CardList({ cards, isLoading, isNotFound }: ICardList): JSX.Element {
             ></Card>
           ))}
         </ul>
+      )}
+      {cards.length > displayedCards && !isLoading ? (
+        <button type="button" className="card-list__button" onClick={displayMore}>
+          More Recipes
+        </button>
+      ) : (
+        ''
       )}
     </section>
   );

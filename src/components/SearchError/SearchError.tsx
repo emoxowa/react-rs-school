@@ -1,4 +1,3 @@
-import React from 'react';
 import './SearchError.css';
 import { ISearchError } from '../../types';
 

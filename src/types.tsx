@@ -36,3 +36,10 @@ export interface ISearchError {
 export interface ISearchBar {
   handleSearchSubmit: (query: string) => void;
 }
+export interface ICardList {
+  isLoading: boolean;
+  isNotFound: boolean;
+  cards: ICard[];
+  displayMore: () => void;
+  displayedCards: number;
+}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CardList from '../../components/CardList/CardList';
 import './Home.css';
 import { filterCards } from '../../utils/utils';
@@ -10,6 +10,19 @@ function Home(): JSX.Element {
   const [isLoading, setIsLoading]: [boolean, (newValue: boolean) => void] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
   const [filteredCards, setFilteredCards] = useState(cards);
+  const [displayedCards, setDdisplayedCards]: [number, (newValue: number) => void] = useState(6);
+
+  function displayCountCards() {
+    setDdisplayedCards(6);
+  }
+
+  function displayMore() {
+    setDdisplayedCards(displayedCards + 3);
+  }
+
+  useEffect(() => {
+    displayCountCards();
+  }, []);
 
   function handleSearchSubmit(query: string): void {
     const userQuery: string = query.toLowerCase().trim();
@@ -21,6 +34,7 @@ function Home(): JSX.Element {
         setIsNotFound(true);
       }
       setIsLoading(false);
+      setDdisplayedCards(6);
       setFilteredCards(cardsList);
     }, 2000);
   }
@@ -38,7 +52,13 @@ function Home(): JSX.Element {
         </h2>
         <SearchBar handleSearchSubmit={handleSearchSubmit} />
       </section>
-      <CardList isLoading={isLoading} cards={filteredCards} isNotFound={isNotFound} />
+      <CardList
+        isLoading={isLoading}
+        cards={filteredCards}
+        isNotFound={isNotFound}
+        displayMore={displayMore}
+        displayedCards={displayedCards}
+      />
     </main>
   );
 }
