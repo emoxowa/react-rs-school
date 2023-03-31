@@ -30,6 +30,9 @@ export interface FormProps {
   setCardsInfo: (cardInfo: IFormCard) => void;
 }
 
+export interface ISearchError {
+  textError: string;
+}
 export interface ISearchBar {
   handleSearchSubmit: (query: string) => void;
 }

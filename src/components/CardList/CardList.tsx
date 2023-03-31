@@ -17,7 +17,7 @@ function CardList({ cards, isLoading, isNotFound }: ICardList): JSX.Element {
 
   function displayCountCards() {
     if (DISPLAY > 1135) {
-      setDdisplayedCards(6);
+      setDdisplayedCards(12);
     } else if (DISPLAY <= 1135) {
       setDdisplayedCards(3);
     } else if (DISPLAY <= 480) {

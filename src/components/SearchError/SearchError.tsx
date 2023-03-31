@@ -1,11 +1,8 @@
 import React from 'react';
 import './SearchError.css';
+import { ISearchError } from '../../types';
 
-interface Props {
-  textError: string;
-}
-
-function SearchError({ textError }: Props): JSX.Element {
+function SearchError({ textError }: ISearchError): JSX.Element {
   return (
     <div className="search-error">
       <p className="search-error__text">{textError}</p>

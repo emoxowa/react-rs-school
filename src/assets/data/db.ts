@@ -4,6 +4,13 @@ import image2 from '../image2.jpg';
 import image3 from '../image3.jpg';
 import image4 from '../image4.jpg';
 import image5 from '../image5.jpg';
+import image6 from '../image6.jpg';
+import image7 from '../image7.jpg';
+import image8 from '../image8.jpg';
+import image9 from '../image9.jpg';
+import image10 from '../image10.jpg';
+import image11 from '../image11.jpg';
+import image12 from '../image12.jpg';
 
 const cards: ICard[] = [
   {
@@ -69,6 +76,97 @@ const cards: ICard[] = [
     checkbox: true,
     radio: 'No',
     rating: 1,
+  },
+  {
+    image: image6,
+    id: '6',
+    title: 'Vegan Lentil Soup',
+    description:
+      'A hearty, delicious soup made with green lentils, vegetables, and a mix of aromatic spices.',
+    userName: 'Harold Stroman',
+    date: '2023-03-23',
+    category: 'Soup',
+    checkbox: false,
+    radio: 'Yes',
+    rating: 10,
+  },
+  {
+    image: image7,
+    id: '7',
+    title: 'Avocado Toast with Poached Egg',
+    description:
+      'Simple and nutritious breakfast featuring creamy avocado, crunchy toast, and a perfectly poached egg.',
+    userName: 'Marie Morris',
+    date: '2023-03-22',
+    category: 'Breakfast',
+    checkbox: true,
+    radio: 'Yes',
+    rating: 8,
+  },
+  {
+    image: image8,
+    id: '8',
+    title: 'Spicy Shrimp Tacos',
+    description:
+      'Flavorful shrimp tacos with a kick, topped with a tangy slaw and creamy avocado sauce.',
+    userName: 'Cecilia Taylor',
+    date: '2023-03-21',
+    category: 'Tacos',
+    checkbox: false,
+    radio: 'Yes',
+    rating: 15,
+  },
+  {
+    image: image9,
+    id: '9',
+    title: 'Roasted Red Pepper Hummus',
+    description:
+      'A creamy and delicious hummus made with roasted red peppers and tahini, perfect for dipping.',
+    userName: 'Leslie Graham',
+    date: '2023-03-20',
+    category: 'Appetizer',
+    checkbox: true,
+    radio: 'No',
+    rating: 4,
+  },
+  {
+    image: image10,
+    id: '10',
+    title: 'Blueberry Pancakes',
+    description:
+      'Fluffy and golden pancakes filled with fresh blueberries, served with maple syrup and butter.',
+    userName: 'Geraldine Morgan',
+    date: '2023-03-19',
+    category: 'Breakfast',
+    checkbox: true,
+    radio: 'Yes',
+    rating: 7,
+  },
+  {
+    image: image11,
+    id: '11',
+    title: 'Thai Green Curry with Chicken',
+    description:
+      'A flavorful and spicy Thai curry with tender chicken, vegetables, and creamy coconut milk.',
+    userName: 'Brent Wilson',
+    date: '2023-03-18',
+    category: 'Curry',
+    checkbox: false,
+    radio: 'No',
+    rating: 6,
+  },
+  {
+    image: image12,
+    id: '12',
+    title: 'Stuffed Bell Peppers',
+    description:
+      'Colorful bell peppers filled with seasoned ground beef, rice, and topped with melted cheese.',
+    userName: 'Monica Reynolds',
+    date: '2023-03-17',
+    category: 'Main Course',
+    checkbox: true,
+    radio: 'No',
+    rating: 3,
   },
 ];
 
