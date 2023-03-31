@@ -5,7 +5,7 @@ import image3 from '../image3.jpg';
 import image4 from '../image4.jpg';
 import image5 from '../image5.jpg';
 
-const data: ICard[] = [
+const cards: ICard[] = [
   {
     id: '1',
     image: image1,
@@ -72,4 +72,4 @@ const data: ICard[] = [
   },
 ];
 
-export default data;
+export default cards;

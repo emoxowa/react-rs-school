@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './form.module.css';
+import './form.css';
 import { IFormCard, FormProps, FormState } from '../../types';
 
 class Form extends Component<FormProps, FormState, IFormCard> {
@@ -83,61 +83,61 @@ class Form extends Component<FormProps, FormState, IFormCard> {
 
   render(): JSX.Element {
     return (
-      <form className={styles.form} onSubmit={this.handleSubmit}>
-        <div className={styles['form__input-group']}>
-          <label htmlFor="nameInput" className={styles.form__label}>
+      <form className="form" onSubmit={this.handleSubmit}>
+        <div className="form__input-group">
+          <label htmlFor="nameInput" className="form__label">
             Your name
           </label>
           <input
             id="nameInput"
             type="text"
-            className={styles.form__input}
+            className="form__input"
             ref={this.inputsRefs.nameInput}
             required
           />
         </div>
 
-        <div className={styles['form__input-group']}>
-          <label htmlFor="recipe-title" className={styles.form__label}>
+        <div className="form__input-group">
+          <label htmlFor="recipe-title" className="form__label">
             Recipe title
           </label>
           <input
             id="recipe-title"
             type="text"
-            className={styles.form__input}
+            className="form__input"
             ref={this.inputsRefs.recipeTitleInput}
             required
           />
         </div>
 
-        <div className={styles['form__input-group']}>
-          <label htmlFor="date" className={styles.form__label}>
+        <div className="form__input-group">
+          <label htmlFor="date" className="form__label">
             Date of publication
           </label>
           <input
             id="date"
             type="date"
-            className={styles.form__input}
+            className="form__input"
             ref={this.inputsRefs.dateInput}
             required
           />
         </div>
 
-        <div className={styles['form__input-group']}>
-          <label htmlFor="description" className={styles.form__label}>
+        <div className="form__input-group">
+          <label htmlFor="description" className="form__label">
             Description
           </label>
           <textarea
             id="description"
-            className={styles.form__input}
+            className="form__input"
             ref={this.inputsRefs.descriptionTextArea}
             rows={10}
             required
           />
         </div>
 
-        <div className={styles['form__input-group']}>
-          <label htmlFor="category" className={styles.form__label}>
+        <div className="form__input-group">
+          <label htmlFor="category" className="form__label">
             Category
           </label>
           <select id="category" ref={this.inputsRefs.categorySelect}>
@@ -152,40 +152,40 @@ class Form extends Component<FormProps, FormState, IFormCard> {
           </select>
         </div>
 
-        <div className={styles['form__input-group']}>
-          <label htmlFor="image" className={styles.form__label}>
+        <div className="form__input-group">
+          <label htmlFor="image" className="form__label">
             Image
           </label>
           <input
             id="image"
             type="file"
-            className={styles.form__input}
+            className="form__input"
             ref={this.inputsRefs.imageInput}
             required
           />
         </div>
 
-        <div className={styles['form__input-group']}>
-          <label className={styles.form__label}>Does it contain gluten?</label>
+        <div className="form__input-group">
+          <label className="form__label">Does it contain gluten?</label>
           <div>
-            <label htmlFor="radio-yes" className={styles.form__label}>
+            <label htmlFor="radio-yes" className="form__label">
               <input
                 value="Yes"
                 id="radio-yes"
                 type="radio"
                 name="option"
-                className={styles.form__input}
+                className="form__input"
                 ref={this.inputsRefs.radioInput}
               />
               Yes
             </label>
-            <label htmlFor="radio-no" className={styles.form__label}>
+            <label htmlFor="radio-no" className="form__label">
               <input
                 value="No"
                 id="radio-no"
                 type="radio"
                 name="option"
-                className={styles.form__input}
+                className="form__input"
                 ref={this.inputsRefs.radioInput}
               />
               No
@@ -193,22 +193,22 @@ class Form extends Component<FormProps, FormState, IFormCard> {
           </div>
         </div>
 
-        <div className={styles['form__input-group']}>
-          <label htmlFor="checkbox" className={styles.form__label}>
+        <div className="form__input-group">
+          <label htmlFor="checkbox" className="form__label">
             Make my name visible
           </label>
           <input
             id="checkbox"
             type="checkbox"
-            className={styles.form__input}
+            className="form__input"
             ref={this.inputsRefs.checkboxInput}
           />
         </div>
 
-        <button type="submit" className={styles.form__button}>
+        <button type="submit" className="form__button">
           Submit
         </button>
-        <div className={styles.form__message}>{this.state.submitMessage}</div>
+        <div className="form__message">{this.state.submitMessage}</div>
       </form>
     );
   }

@@ -16,7 +16,7 @@ export interface FormState {
 export interface ICard {
   id?: string;
   image?: string;
-  title?: string;
+  title: string;
   userName?: string;
   description?: string;
   rating?: number;
@@ -28,4 +28,8 @@ export interface ICard {
 
 export interface FormProps {
   setCardsInfo: (cardInfo: IFormCard) => void;
+}
+
+export interface ISearchBar {
+  handleSearchSubmit: (query: string) => void;
 }

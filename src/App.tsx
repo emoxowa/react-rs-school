@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Forms from './pages/Forms/Forms';
+import * as ROUTES from './constants/routes';
 
 function App(): JSX.Element {
   return (
@@ -13,7 +14,7 @@ function App(): JSX.Element {
       <div className="app">
         <Routes>
           <Route
-            path="/"
+            path={ROUTES.HOME}
             element={
               <>
                 <Header />
@@ -24,7 +25,7 @@ function App(): JSX.Element {
           />
 
           <Route
-            path="about"
+            path={ROUTES.ABOUT}
             element={
               <>
                 <Header />
@@ -34,7 +35,7 @@ function App(): JSX.Element {
             }
           />
           <Route
-            path="forms"
+            path={ROUTES.FORMS}
             element={
               <>
                 <Header />

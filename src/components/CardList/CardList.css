@@ -1,8 +1,4 @@
-.main {
-  margin: 0 auto;
-}
-
-.cards {
+.cards-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
@@ -10,11 +6,11 @@
   justify-content: center;
   justify-items: center;
   max-width: 1110px;
+  padding: 0;
 }
 
 @media (max-width: 1174px) {
-  .cards {
+  .cards-list {
     max-width: 730px;
   }
-  
 } 
