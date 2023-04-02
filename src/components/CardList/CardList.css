@@ -1,0 +1,35 @@
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin: 0 auto;
+  justify-content: center;
+  justify-items: center;
+  max-width: 1110px;
+  padding: 0;
+}
+
+.card-list__button {
+  border: 0;
+  width: 320px;
+  height: 36px;
+  background-color: var(--color-secondary-bg);
+  border-radius: 6px;
+  color: var(--color-primary-txt);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 60px auto 80px;
+  cursor: pointer;
+}
+
+.card-list__button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 1174px) {
+  .cards-list {
+    max-width: 730px;
+  }
+} 
+

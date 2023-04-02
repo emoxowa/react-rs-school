@@ -1,0 +1,25 @@
+.wrapper {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 100px;
+}
+
+.forms__title {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
+  gap: 30px;
+  margin: 0 auto;
+  justify-content: center;
+  justify-items: center;
+  max-width: 1110px;
+  padding: 0;
+}
+
+/* * {
+  border: 1px solid red;
+} */
