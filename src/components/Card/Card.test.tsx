@@ -1,24 +1,28 @@
 import { render, screen } from '@testing-library/react';
+import { test } from 'vitest';
 import Card from './Card';
 
-describe('Card component', () => {
-  const defaultProps = {
-    image: null,
-    title: 'Default Title',
-    userName: 'Default User',
-    description: 'Default Description',
-    date: '2022-03-25',
-    category: 'Default Category',
-    checkbox: false,
+test('renders the Card component with given props', async () => {
+  const sampleProps = {
+    image: 'https://via.placeholder.com/150',
+    title: 'Delicious Cake',
+    userName: 'John Doe',
+    description: 'A delicious cake recipe.',
+    date: '2023-04-02',
+    category: 'Dessert',
+    checkbox: true,
     radio: 'Yes',
+    rating: 5,
   };
 
-  it('should display the default image if no image is provided', () => {
-    render(<Card {...defaultProps} />);
+  render(<Card {...sampleProps} />);
 
-    const imageElement = screen.getByAltText('Featured meal image');
-
-    expect(imageElement).toBeInTheDocument();
-    expect(imageElement.src).toContain('defaultImage.png');
-  });
+  expect(screen.getByAltText('Featured meal image')).toHaveAttribute('src', sampleProps.image);
+  expect(screen.getByText(sampleProps.title)).toBeInTheDocument();
+  expect(screen.getByText(`author: ${sampleProps.userName}`)).toBeInTheDocument();
+  expect(screen.getByText(sampleProps.description)).toBeInTheDocument();
+  expect(screen.getByText(sampleProps.date)).toBeInTheDocument();
+  expect(screen.getByText(sampleProps.category)).toBeInTheDocument();
+  expect(screen.queryByAltText('gluten-free')).not.toBeInTheDocument();
+  expect(screen.getByText(`${sampleProps.rating}`)).toBeInTheDocument();
 });

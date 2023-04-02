@@ -7,7 +7,7 @@ import { ICard } from '../../types';
 import SearchBar from '../../components/SearchBar/SearchBar';
 
 function Home(): JSX.Element {
-  const [isLoading, setIsLoading]: [boolean, (newValue: boolean) => void] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isNotFound, setIsNotFound] = useState(false);
   const [filteredCards, setFilteredCards] = useState(cards);
   const [displayedCards, setDdisplayedCards]: [number, (newValue: number) => void] = useState(6);

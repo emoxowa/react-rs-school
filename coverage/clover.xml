@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1680453730353" clover="3.2.0">
-  <project timestamp="1680453730353" name="All files">
-    <metrics statements="922" coveredstatements="861" conditionals="63" coveredconditionals="49" methods="41" coveredmethods="34" elements="1026" coveredelements="944" complexity="0" loc="922" ncloc="922" packages="24" files="24" classes="24"/>
+<coverage generated="1680454482161" clover="3.2.0">
+  <project timestamp="1680454482161" name="All files">
+    <metrics statements="922" coveredstatements="861" conditionals="62" coveredconditionals="47" methods="41" coveredmethods="34" elements="1025" coveredelements="942" complexity="0" loc="922" ncloc="922" packages="24" files="24" classes="24"/>
     <package name="src">
       <metrics statements="55" coveredstatements="55" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="C:\Users\79163\dev\RS-SCHOOL-2023Q1\react-rs-school\src\App.tsx">
@@ -243,9 +243,9 @@
       </file>
     </package>
     <package name="src.components.Card">
-      <metrics statements="43" coveredstatements="43" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
+      <metrics statements="43" coveredstatements="43" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="Card.tsx" path="C:\Users\79163\dev\RS-SCHOOL-2023Q1\react-rs-school\src\components\Card\Card.tsx">
-        <metrics statements="43" coveredstatements="43" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <metrics statements="43" coveredstatements="43" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -265,7 +265,7 @@
         <line num="17" count="19" type="stmt"/>
         <line num="18" count="19" type="stmt"/>
         <line num="19" count="19" type="stmt"/>
-        <line num="20" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="19" type="cond" truecount="0" falsecount="1"/>
         <line num="21" count="19" type="stmt"/>
         <line num="22" count="19" type="stmt"/>
         <line num="23" count="19" type="stmt"/>
