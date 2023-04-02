@@ -23,7 +23,7 @@ export interface ICard {
 }
 
 export interface FormProps {
-  setCardsInfo: (cardInfo: IFormCard) => void;
+  setCardsInfo: (cardInfo: IFormValues) => void;
 }
 
 export interface ISearchError {
@@ -76,7 +76,7 @@ export interface IFormValues {
   Description: string;
   Category: RecipeCategory;
   Image: File | undefined;
-  'Gluten free': string;
+  'Contain gluten': string;
   checkbox: boolean;
 }
 

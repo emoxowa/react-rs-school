@@ -3,7 +3,10 @@
   max-width: 400px;
   margin: 40px auto 100px;
   padding: 50px 50px;
-  background-color: var(--color-secondary-bg);
+  background-color: transparent;
+  backdrop-filter: blur(15px) saturate(150%) contrast(100%);
+  box-shadow: inset;
+  border: 1px solid var(--color-primary);
 }
 
 .form__input-group {
@@ -23,7 +26,7 @@
   outline: none;
   border-radius: 2px;
   padding: 5px;
-  border: 2px solid var(---color-primary-txt);
+  border: 2px solid var(--color-primary-txt);
 }
 
 .form__input:focus {
@@ -52,7 +55,7 @@
 .form__input-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 1px;
 }
 
 .form__radio-wrapper {

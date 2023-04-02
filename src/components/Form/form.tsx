@@ -11,8 +11,8 @@ import InputFile from './InputFile/InputFile';
 import InputRadio from './InputRadio/InputRadio';
 import InputCheckbox from './InputCheckbox/InputCheckbox';
 
-const Form: React.FC<FormProps> = () => {
-  const [submitMessage, setSubmitMessage] = useState('');
+const Form: React.FC<FormProps> = ({ setCardsInfo }) => {
+  const [successMessage, setSuccessMessage] = useState('');
 
   const methods = useForm<IFormValues>();
   const {
@@ -23,9 +23,10 @@ const Form: React.FC<FormProps> = () => {
   } = methods;
 
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
-    alert(JSON.stringify(data));
+    console.log(data);
+    setCardsInfo(data as IFormValues);
     reset();
-    setSubmitMessage(
+    setSuccessMessage(
       `Thank you, ${data['Your name']}! Your submission has been successfully submitted to the submission submitter. It's time to submit to the fact that you're a submission superstar!`
     );
   };
@@ -89,10 +90,10 @@ const Form: React.FC<FormProps> = () => {
 
         <InputRadio
           label="Contain gluten?"
-          name="Gluten free"
+          name="Contain gluten"
           register={register}
           required
-          error={errors['Gluten free'] && 'This option is required'}
+          error={errors['Contain gluten'] && 'This option is required'}
         />
 
         <InputCheckbox
@@ -102,8 +103,8 @@ const Form: React.FC<FormProps> = () => {
           error={errors.checkbox && 'An error occurred'}
         />
 
-        <input className="form__button" type="submit" />
-        <div className="form__message">{submitMessage}</div>
+        <input className="form__button" type="submit" value="Submit" />
+        <div className="form__message">{successMessage}</div>
       </form>
     </FormProvider>
   );

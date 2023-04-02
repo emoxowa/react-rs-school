@@ -1,14 +1,24 @@
 import { useState } from 'react';
 import Form from '../../components/Form/form';
 import styles from './Forms.module.css';
-import { IFormCard } from '../../types';
+import { IFormCard, IFormValues } from '../../types';
 import FormCard from '../../components/FormCard/FormCard';
 
 function Forms() {
   const [cards, setCards] = useState<IFormCard[]>([]);
 
-  const addCard = (cardInfo: IFormCard): void => {
-    setCards((prevCards) => [...prevCards, cardInfo]);
+  const addCard = (data: IFormValues): void => {
+    const newCard = {
+      userName: data['Your name'],
+      recipeTitle: data['Recipe title'],
+      date: data['Date of publication'],
+      description: data.Description,
+      category: data.Category,
+      image: data.Image,
+      checkbox: data.checkbox,
+      radio: data['Contain gluten'],
+    };
+    setCards((prevCards) => [...prevCards, newCard]);
   };
 
   return (

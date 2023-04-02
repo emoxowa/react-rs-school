@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from '../../assets/logo.png';
-import * as ROUTES from '../../constants/routes';
+import * as ROUTES from '../../utils/constants/routes';
 
 class Header extends Component {
   render(): JSX.Element {
