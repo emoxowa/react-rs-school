@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './form.css';
+import './Form.css';
 import { FormProps, IFormValues } from '../../types';
 import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
 import { startsWithUppercase } from '../../utils/utils';

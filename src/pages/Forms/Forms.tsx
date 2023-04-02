@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Form from '../../components/Form/form';
+import Form from '../../components/Form/Form';
 import styles from './Forms.module.css';
 import { IFormCard, IFormValues } from '../../types';
 import FormCard from '../../components/FormCard/FormCard';
