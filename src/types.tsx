@@ -1,3 +1,4 @@
+import { Path, UseFormRegister, RegisterOptions } from 'react-hook-form';
 export interface IFormCard {
   userName?: string;
   recipeTitle?: string;
@@ -42,4 +43,17 @@ export interface ICardList {
   cards: ICard[];
   displayMore: () => void;
   displayedCards: number;
+}
+
+export interface InputProps {
+  label: Path<IFormValues>;
+  register: (options?: RegisterOptions) => ReturnType<UseFormRegister<IFormValues>>;
+  required: boolean;
+  error?: string;
+}
+
+export interface IFormValues {
+  'Your name': string;
+  'Recipe title': string;
+  'Date of publication': string;
 }
