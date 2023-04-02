@@ -48,3 +48,15 @@
   margin: 30px;
   font-size: 12px;
 }
+
+.form__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.error__text{
+  color: red;
+  text-align: start;
+  font-size: 10px;
+}

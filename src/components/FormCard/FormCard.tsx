@@ -24,7 +24,7 @@ function FormCard({
       <div className="card__content">
         <div className="card__category-list">
           <span className="card__category">{category}</span>
-          {radio == 'No' ? <img src={gluten} className="card__gluten" /> : ''}
+          {radio == 'No' ? <img src={gluten} className="card__gluten" alt="gluten-free" /> : null}
         </div>
         <h3 className="card__title">{recipeTitle}</h3>
         <h4 className="card__subtitle">{`author: ${checkbox ? userName : ' --- '}`}</h4>
