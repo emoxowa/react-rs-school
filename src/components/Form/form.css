@@ -55,6 +55,10 @@
   gap: 5px;
 }
 
+.form__radio-wrapper {
+  text-align: left;
+}
+
 .error__text{
   color: red;
   text-align: start;

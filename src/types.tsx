@@ -1,4 +1,4 @@
-import { Path, UseFormRegister, RegisterOptions } from 'react-hook-form';
+import { Path, UseFormRegister, RegisterOptions, FieldValues } from 'react-hook-form';
 export interface IFormCard {
   userName?: string;
   recipeTitle?: string;
@@ -9,11 +9,6 @@ export interface IFormCard {
   checkbox?: boolean;
   radio?: string;
 }
-
-export interface FormState {
-  submitMessage: string;
-}
-
 export interface ICard {
   id?: string;
   image?: string;
@@ -52,8 +47,46 @@ export interface InputProps {
   error?: string;
 }
 
+export interface InputFileProps {
+  label: Path<FieldValues>;
+  name: string;
+  required: boolean;
+  error?: string;
+}
+
+export interface InputRadioProps {
+  label: string;
+  name: keyof IFormValues;
+  register: UseFormRegister<IFormValues>;
+  required?: boolean;
+  error?: string;
+}
+
+export interface InputCheckboxProps {
+  label: string;
+  name: keyof IFormValues;
+  register: UseFormRegister<IFormValues>;
+  error?: string;
+}
+
 export interface IFormValues {
   'Your name': string;
   'Recipe title': string;
   'Date of publication': string;
+  Description: string;
+  Category: RecipeCategory;
+  Image: File | undefined;
+  'Gluten free': string;
+  checkbox: boolean;
+}
+
+export enum RecipeCategory {
+  Breakfast = 'Breakfast',
+  Soups = 'Soups',
+  Salads = 'Salads',
+  Pasta = 'Pasta',
+  Pizza = 'Pizza',
+  Seafood = 'Seafood',
+  Desserts = 'Desserts',
+  Drinks = 'Drinks',
 }
