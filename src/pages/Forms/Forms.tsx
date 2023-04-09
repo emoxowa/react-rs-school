@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Form from '../../components/Form/Form';
-import styles from './Forms.module.css';
+import './Forms.css';
 import { IFormCard, IFormValues } from '../../types';
 import FormCard from '../../components/FormCard/FormCard';
 
@@ -22,13 +22,13 @@ function Forms() {
   };
 
   return (
-    <main className={styles.main}>
-      <section className={styles.wrapper}>
-        <h1 className={styles.forms__title}>
+    <main className="main">
+      <section className="wrapper">
+        <h1 className="forms__title">
           Add your healthy recipe and become an author in our recipe book!
         </h1>
         <Form setCardsInfo={addCard} />
-        <ul className={styles.cards}>
+        <ul className="cards">
           {cards.map((card, index) => (
             <FormCard
               key={index}
