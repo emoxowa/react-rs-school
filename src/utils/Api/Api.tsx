@@ -1,4 +1,3 @@
-// import { MAIN_URL } from '../constants/constants';
 import { checkResponse } from '../utils';
 
 export const getCards = () => {

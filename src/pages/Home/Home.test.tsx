@@ -4,6 +4,8 @@ import Home from './Home';
 
 test('renders the Home component', async () => {
   render(<Home />);
-  expect(screen.getByText(/world of healthy recipes/i)).toBeInTheDocument();
-  expect(screen.getByText(/we believe that healthy eating/i)).toBeInTheDocument();
+  const title = screen.getByRole('heading', { name: /Discover a World of Tasty Recipes/i });
+  const subtitle = screen.getByText(/for a Flavorful and Scrumptious Adventure!/i);
+  expect(title).toBeTruthy();
+  expect(subtitle).toBeTruthy();
 });
