@@ -2,15 +2,30 @@ import { useEffect, useState } from 'react';
 import CardList from '../../components/CardList/CardList';
 import './Home.css';
 import { filterCards } from '../../utils/utils';
-import cards from '../../assets/data/db';
 import { ICard } from '../../types';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import { getCards } from '../../utils/Api/Api';
 
 function Home(): JSX.Element {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isNotFound, setIsNotFound] = useState(false);
-  const [filteredCards, setFilteredCards] = useState(cards);
+  const [cards, setCards] = useState<ICard[]>([]);
+  const [filteredCards, setFilteredCards] = useState<ICard[]>([]);
   const [displayedCards, setDdisplayedCards]: [number, (newValue: number) => void] = useState(6);
+
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const { meals } = await getCards();
+        setCards(meals);
+        setFilteredCards(meals);
+      } catch (error) {
+        console.error('Error fetching cards:', error);
+      }
+    };
+
+    fetchCards();
+  }, []);
 
   function displayCountCards() {
     setDdisplayedCards(6);
@@ -43,12 +58,13 @@ function Home(): JSX.Element {
     <main className="main">
       <section className="about-project">
         <h1 className="about-project__title">
-          Explore a <span className="about-project__span">World of Healthy Recipes</span> for a
-          Nourishing and Delicious Experience!
+          Discover a <span className="about-project__span">World of Tasty Recipes </span>
+          for a Flavorful and Scrumptious Adventure!
         </h1>
         <h2 className="about-project__subtitle">
-          We believe that healthy eating doesn&apos;t have to be boring or bland, and that&apos;s
-          why we&apos;ve created recipes that are both nutritious and delicious.
+          For now, our site showcases recipes starting with the letter &apos;R&apos; – because our
+          creator isn&apos;t ready to splurge on a premium API subscription just yet. Enjoy the
+          &apos;R&apos;ecipes!
         </h2>
         <SearchBar handleSearchSubmit={handleSearchSubmit} />
       </section>

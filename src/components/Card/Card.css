@@ -4,6 +4,7 @@
   border: 5px;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .card__image {
@@ -26,7 +27,6 @@
   text-align: start;
   font-weight: 500;
   font-size: 20px;
-  line-height: 30px;
   text-overflow: ellipsis;
   overflow: hidden;
   max-height: 24px;
@@ -99,16 +99,6 @@
   margin-left: 0;
   margin-bottom: 5px;
   text-align: start;
+  color: black
 }
 
-.card__gluten {
-  text-align: start;
-  display: inline-block;
-  border-radius: 5px;
-  font-size: 12px;
-  margin-left: 0;
-  margin-bottom: 10px;
-  text-align: start;
-  width: 30px;
-  height: 30px;
-}

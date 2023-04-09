@@ -9,19 +9,32 @@ export interface IFormCard {
   checkbox?: boolean;
   radio?: string;
 }
+
 export interface ICard {
-  id?: string;
-  image?: string;
-  title: string;
-  userName?: string;
-  description?: string;
-  rating?: number;
-  date?: string;
-  category?: string;
-  checkbox?: boolean;
-  radio?: string;
+  idMeal: number;
+  strMeal: string;
+  strDrinkAlternate: string | null;
+  strCategory: string;
+  strArea: string;
+  strInstructions: string;
+  strMealThumb: string;
+  strTags: string;
+  strYoutube: string;
+  ingredients: IIngredient[];
+  strSource: string;
+  strImageSource: string | null;
+  strCreativeCommonsConfirmed: string | null;
+  dateModified: string | null;
 }
 
+export interface IIngredient {
+  strIngredient: string;
+  strMeasure: string;
+}
+
+export interface IApiResponse {
+  meals: ICard[];
+}
 export interface FormProps {
   setCardsInfo: (cardInfo: IFormValues) => void;
 }
