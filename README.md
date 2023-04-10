@@ -2,10 +2,6 @@
 
 This is an educational project aimed at learning and practicing React development skills.
 
-## Website
-
-To view the website for this project, please visit: https://stellar-sprinkles-779208.netlify.app/
-
 ## Prerequisites
 
 Before you start, you need to have the following installed on your system:
