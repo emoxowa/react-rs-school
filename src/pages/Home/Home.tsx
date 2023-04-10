@@ -18,7 +18,15 @@ function Home(): JSX.Element {
       try {
         const { meals } = await getCards();
         setCards(meals);
-        setFilteredCards(meals);
+
+        const savedValue = localStorage.getItem('searchBarInputValue');
+        if (savedValue) {
+          const userQuery: string = savedValue.toLowerCase().trim();
+          const cardsList: ICard[] = filterCards(meals, userQuery);
+          setFilteredCards(cardsList);
+        } else {
+          setFilteredCards(meals);
+        }
       } catch (error) {
         console.error('Error fetching cards:', error);
       }
