@@ -1,32 +1,40 @@
-import React, { Component } from 'react';
-import styles from './Card.module.css';
-import image1 from '../../assets/image1.png';
+import './Card.css';
 import like from '../../assets/like.svg';
+import { ICard } from '../../types';
+interface CardProps {
+  cardData: ICard;
+  onCardClick: (card: ICard) => void;
+}
 
-class Card extends Component {
-  render(): JSX.Element {
-    return (
-      <div className={styles.card}>
-        <img className={styles['card__image']} src={image1} alt="Featured meal image" />
-        <div className={styles['card__content']}>
-          <h3 className={styles['card__title']}>Featured Meal</h3>
-          <h4 className={styles['card__subtitle']}>Served with french fries + drink</h4>
-          <p className={styles['card__description']}>
-            Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender
-            crisp patty and more...
-          </p>
-          <div className={styles['card__footer']}>
-            <div>
-              <button className={styles['card__button']}>
-                <img className={styles['card__icon']} src={like} alt="like" />
-              </button>
-            </div>
-            <p className="rating__number">12</p>
+const Card: React.FC<CardProps> = ({ cardData, onCardClick }) => {
+  function handleClick() {
+    onCardClick(cardData);
+  }
+
+  return (
+    <div className="card" onClick={handleClick}>
+      <img className="card__image" src={cardData.strMealThumb} alt="Featured meal image" />
+      <div className="card__content">
+        <div className="card__category-list">
+          <span className="card__category">{cardData.strCategory}</span>
+        </div>
+        <h3 className="card__title">{cardData.strMeal}</h3>
+        <h4 className="card__subtitle">{`country: ${
+          cardData.strArea == 'Unknown' ? '-' : cardData.strArea
+        }`}</h4>
+        <p className="card__description">{cardData.strInstructions}</p>
+        <div className="card__footer">
+          <div className="card__rating-container">
+            <button className="card__button">
+              <img className="card__icon" src={like} alt="like" />
+            </button>
+            <p className="rating__number">{Math.floor(Math.random() * 21)}</p>
           </div>
+          <div className="card__date">09.04.2023</div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Card;
