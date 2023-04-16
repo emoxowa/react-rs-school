@@ -1,13 +1,16 @@
-import { useState } from 'react';
 import './Forms.css';
 import { IFormCard, IFormValues } from '../../types';
 import FormCard from '../../components/FormCard/FormCard';
 import Form from '../../components/Form/Form';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCard } from '../../reducers/cardsSlice';
+import { RootState } from '../../store/store';
 
 function Forms() {
-  const [cards, setCards] = useState<IFormCard[]>([]);
+  const cards: IFormCard[] = useSelector((state: RootState) => state.cards.cards);
+  const dispatch = useDispatch();
 
-  const addCard = (data: IFormValues): void => {
+  const addCardHandler = (data: IFormValues): void => {
     const newCard = {
       userName: data['Your name'],
       recipeTitle: data['Recipe title'],
@@ -18,7 +21,7 @@ function Forms() {
       checkbox: data.checkbox,
       radio: data['Contain gluten'],
     };
-    setCards((prevCards) => [...prevCards, newCard]);
+    dispatch(addCard(newCard));
   };
 
   return (
@@ -27,7 +30,7 @@ function Forms() {
         <h1 className="forms__title">
           Add your healthy recipe and become an author in our recipe book!
         </h1>
-        <Form setCardsInfo={addCard} />
+        <Form setCardsInfo={addCardHandler} />
         <ul className="cards">
           {cards.map((card, index) => (
             <FormCard
