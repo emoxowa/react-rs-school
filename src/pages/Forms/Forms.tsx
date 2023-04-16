@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Form from '../../components/Form/Form';
 import './Forms.css';
 import { IFormCard, IFormValues } from '../../types';
 import FormCard from '../../components/FormCard/FormCard';
+import Form from '../../components/Form/Form';
 
 function Forms() {
   const [cards, setCards] = useState<IFormCard[]>([]);

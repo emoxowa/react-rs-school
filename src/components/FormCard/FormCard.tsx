@@ -1,4 +1,4 @@
-import '../Card/Card.css';
+import './FormCard.css';
 import like from '../../assets/like.svg';
 import { IFormCard } from '../../types';
 import gluten from '../../assets/gluten-free.png';
