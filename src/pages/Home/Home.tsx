@@ -1,64 +1,67 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../store/store';
+import {
+  setIsLoading,
+  setIsNotFound,
+  setCards,
+  setFilteredCards,
+  setFilteredCardsInitialized,
+} from '../../reducers/searchResultsSlice';
 import CardList from '../../components/CardList/CardList';
 import './Home.css';
 import { filterCards } from '../../utils/utils';
 import { ICard } from '../../types';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import { getCards } from '../../utils/Api/Api';
+import { useGetCardsQuery } from '../../utils/Api/Api';
 
 function Home(): JSX.Element {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isNotFound, setIsNotFound] = useState(false);
-  const [cards, setCards] = useState<ICard[]>([]);
-  const [filteredCards, setFilteredCards] = useState<ICard[]>([]);
-  const [displayedCards, setDdisplayedCards]: [number, (newValue: number) => void] = useState(6);
+  const { isLoading, isNotFound, cards, filteredCards, filteredCardsInitialized } = useSelector(
+    (state: RootState) => state.searchResults
+  );
+  const dispatch = useDispatch();
+  const [displayedCards, setDisplayedCards] = useState(6);
+  const searchText = useSelector((state: RootState) => state.searchText.value);
+  const { data, error } = useGetCardsQuery();
 
   useEffect(() => {
-    const fetchCards = async () => {
-      try {
-        const { meals } = await getCards();
-        setCards(meals);
-
-        const savedValue = localStorage.getItem('searchBarInputValue');
-        if (savedValue) {
-          const userQuery: string = savedValue.toLowerCase().trim();
+    if (data) {
+      const { meals } = data;
+      dispatch(setCards(meals));
+      if (!filteredCardsInitialized) {
+        if (searchText) {
+          const userQuery: string = searchText.toLowerCase().trim();
           const cardsList: ICard[] = filterCards(meals, userQuery);
-          setFilteredCards(cardsList);
+          dispatch(setFilteredCards(cardsList));
         } else {
-          setFilteredCards(meals);
+          dispatch(setFilteredCards(meals));
         }
-      } catch (error) {
-        console.error('Error fetching cards:', error);
+        dispatch(setFilteredCardsInitialized(true));
       }
-    };
+    }
 
-    fetchCards();
-  }, []);
-
-  function displayCountCards() {
-    setDdisplayedCards(6);
-  }
+    if (error) {
+      console.error('Error fetching cards:', error);
+    }
+  }, [data, error, searchText, filteredCardsInitialized, dispatch]);
 
   function displayMore() {
-    setDdisplayedCards(displayedCards + 3);
+    setDisplayedCards(displayedCards + 3);
   }
-
-  useEffect(() => {
-    displayCountCards();
-  }, []);
 
   function handleSearchSubmit(query: string): void {
     const userQuery: string = query.toLowerCase().trim();
     const cardsList: ICard[] = filterCards(cards, userQuery);
-    setIsNotFound(false);
-    setIsLoading(true);
+    dispatch(setIsNotFound(false));
+    dispatch(setIsLoading(true));
+
     setTimeout(() => {
       if (cardsList.length === 0) {
-        setIsNotFound(true);
+        dispatch(setIsNotFound(true));
       }
-      setIsLoading(false);
-      setDdisplayedCards(6);
-      setFilteredCards(cardsList);
+      dispatch(setIsLoading(false));
+      setDisplayedCards(6);
+      dispatch(setFilteredCards(cardsList));
     }, 2000);
   }
 

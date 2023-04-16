@@ -1,29 +1,21 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import React, { FormEvent } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from '../../store/store';
+import { setSearchText } from '../../reducers/searchTextSlice';
 import './SearchBar.css';
 import { ISearchBar } from '../../types';
 
 function SearchBar({ handleSearchSubmit }: ISearchBar): JSX.Element {
-  const [inputValue, setInputValue] = useState<string>('');
-
-  useEffect(() => {
-    const savedValue = localStorage.getItem('searchBarInputValue');
-    if (savedValue) {
-      setInputValue(savedValue);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('searchBarInputValue', inputValue);
-  }, [inputValue]);
+  const searchText = useSelector((state: RootState) => state.searchText.value);
+  const dispatch: AppDispatch = useDispatch();
 
   const handleInputChange = (event: FormEvent<HTMLInputElement>): void => {
-    setInputValue(event.currentTarget.value);
+    dispatch(setSearchText(event.currentTarget.value));
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    localStorage.setItem('searchBarInputValue', inputValue);
-    handleSearchSubmit(inputValue);
+    handleSearchSubmit(searchText);
   };
 
   return (
@@ -33,7 +25,7 @@ function SearchBar({ handleSearchSubmit }: ISearchBar): JSX.Element {
           type="text"
           placeholder="Search recipe"
           className="search__input"
-          value={inputValue}
+          value={searchText}
           onChange={handleInputChange}
         ></input>
         <button type="submit" className="search__button"></button>
