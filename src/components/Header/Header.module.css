@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   max-width: 1110px;
-  padding: 20px 20px;
+  padding: 30px 20px;
   margin: 0 auto;
   align-items: center;
 }
 
 .logo {
-  width: 70px;
-} 
+  width: 150px;
+}
 
 .navigation {
   margin: 0;

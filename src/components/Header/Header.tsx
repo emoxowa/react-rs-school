@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from '../../assets/logo.png';
+import * as ROUTES from '../../utils/constants/routes';
 
 class Header extends Component {
   render(): JSX.Element {
@@ -13,13 +14,16 @@ class Header extends Component {
         <nav className={styles.navigation}>
           <ul className={styles['navigation__list']}>
             <li className={styles['navigation__item']}>
-              <Link to="/">Home</Link>
+              <Link to={ROUTES.HOME}>Home</Link>
             </li>
             <li className={styles['navigation__item']}>
-              <Link to="about">About</Link>
+              <Link to={ROUTES.ABOUT}>About</Link>
             </li>
             <li className={styles['navigation__item']}>
-              <Link to="contacts">NotFound</Link>
+              <Link to={ROUTES.FORMS}>Forms</Link>
+            </li>
+            <li className={styles['navigation__item']}>
+              <Link to="/contacts">NotFound</Link>
             </li>
           </ul>
         </nav>

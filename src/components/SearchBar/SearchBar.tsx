@@ -1,48 +1,37 @@
-import React, { Component, FormEvent } from 'react';
-import styles from './SearchBar.module.css';
-interface State {
-  inputValue: string;
-}
+import React, { FormEvent } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from '../../store/store';
+import { setSearchText } from '../../reducers/searchTextSlice';
+import './SearchBar.css';
+import { ISearchBar } from '../../types';
 
-export class SearchBar extends Component<State> {
-  state: State = {
-    inputValue: '',
+function SearchBar({ handleSearchSubmit }: ISearchBar): JSX.Element {
+  const searchText = useSelector((state: RootState) => state.searchText.value);
+  const dispatch: AppDispatch = useDispatch();
+
+  const handleInputChange = (event: FormEvent<HTMLInputElement>): void => {
+    dispatch(setSearchText(event.currentTarget.value));
   };
 
-  componentDidMount(): void {
-    const savedValue = localStorage.getItem('searchBarInputValue');
-    if (savedValue) {
-      this.setState({ inputValue: savedValue });
-    }
-  }
-
-  componentWillUnmount(): void {
-    localStorage.setItem('searchBarInputValue', this.state.inputValue);
-  }
-
-  handleInputChange = (event: FormEvent<HTMLInputElement>): void => {
-    this.setState({ inputValue: event.currentTarget.value });
-  };
-
-  handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    localStorage.setItem('searchBarInputValue', this.state.inputValue);
+    handleSearchSubmit(searchText);
   };
 
-  render(): JSX.Element {
-    return (
-      <div className={styles['search-container']}>
-        <form action="/search" className={styles['search__form']} onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Search recipe"
-            className={styles['search__input']}
-            value={this.state.inputValue}
-            onChange={this.handleInputChange}
-          ></input>
-          <button type="submit" className={styles['search__button']}></button>
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div className="search-container">
+      <form action="/search" className="search__form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search recipe"
+          className="search__input"
+          value={searchText}
+          onChange={handleInputChange}
+        ></input>
+        <button type="submit" className="search__button"></button>
+      </form>
+    </div>
+  );
 }
+
+export default SearchBar;
