@@ -51,3 +51,19 @@ test('handles card click event correctly', async () => {
   expect(onCardClick).toHaveBeenCalledTimes(1);
   expect(onCardClick).toHaveBeenCalledWith(mockCardData);
 });
+
+test('renders the Card component with an unknown area', async () => {
+  const unknownAreaCardData = { ...mockCardData, strArea: 'Unknown' };
+  render(<Card cardData={unknownAreaCardData} onCardClick={mockOnCardClick} />);
+
+  const area = screen.getByText('country: -');
+  expect(area).toBeTruthy();
+});
+
+test('renders the Card component with a known area', async () => {
+  const knownAreaCardData = { ...mockCardData, strArea: 'Test Area' };
+  render(<Card cardData={knownAreaCardData} onCardClick={mockOnCardClick} />);
+
+  const area = screen.getByText(`country: ${knownAreaCardData.strArea}`);
+  expect(area).toBeTruthy();
+});

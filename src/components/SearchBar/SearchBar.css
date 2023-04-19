@@ -41,7 +41,7 @@
   background-size: 20px;
 }
 
-.search__button:hover  {
+.search__button:hover {
   background-color: var(--color-primary);
   border: none;
 }

@@ -62,10 +62,10 @@
   max-width: 40%;
 }
 
-.about__button:hover .about__arrow{
+.about__button:hover .about__arrow {
   color: var(--color-primary-txt);
 }
 
 .about__button:hover {
-  border: 2px solid var(--color-primary-txt); 
+  border: 2px solid var(--color-primary-txt);
 }
